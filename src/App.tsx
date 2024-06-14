@@ -19,6 +19,7 @@ class App extends Component<Props, State> {
   renderChildren = () => {
     if (!this.router) {
       this.router = getAppRouter()
+      debugger
     }
     const children = <RouterProvider router={this.router} />
     return children
