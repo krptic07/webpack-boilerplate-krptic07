@@ -1,4 +1,4 @@
-import { DsColor, TypographyVariants } from '../Types'
+import { KrTypographyVariants } from './Types/KrTypography'
 
 export default function getTypography(fontFamilyName: string = '') {
   const fontFamily = `"${fontFamilyName}", "Helvetica"`
@@ -43,7 +43,7 @@ export default function getTypography(fontFamilyName: string = '') {
     paragraphSpacing: '0px',
   }
 
-  const TypoComposite: TypographyVariants = {
+  const TypoComposite: KrTypographyVariants = {
     displayBoldLarge: {
       fontFamily,
       fontWeight: TypoPrimitive.fontWeightBold,
@@ -308,7 +308,7 @@ export default function getTypography(fontFamilyName: string = '') {
     },
   }
 
-  const Typo = {
+  const krTypo = {
     ...TypoPrimitive,
     ...TypoComposite,
   }
@@ -317,48 +317,48 @@ export default function getTypography(fontFamilyName: string = '') {
     htmlFontSize: 16,
     fontSize: 14,
     fontFamily,
-    fontWeightLight: Typo.fontWeightLight,
-    fontWeightRegular: Typo.fontWeightRegular,
-    fontWeightMedium: Typo.fontWeightSemibold,
-    fontWeightBold: Typo.fontWeightBold,
+    fontWeightLight: krTypo.fontWeightLight,
+    fontWeightRegular: krTypo.fontWeightRegular,
+    fontWeightMedium: krTypo.fontWeightSemibold,
+    fontWeightBold: krTypo.fontWeightBold,
 
-    displayBoldLarge: Typo.displayBoldLarge,
-    displayBoldMedium: Typo.displayBoldMedium,
-    displayBoldSmall: Typo.displayBoldSmall,
+    displayBoldLarge: krTypo.displayBoldLarge,
+    displayBoldMedium: krTypo.displayBoldMedium,
+    displayBoldSmall: krTypo.displayBoldSmall,
 
-    displayBoldItalicLarge: Typo.displayBoldItalicLarge,
-    displayBoldItalicMedium: Typo.displayBoldItalicMedium,
-    displayBoldItalicSmall: Typo.displayBoldItalicSmall,
+    displayBoldItalicLarge: krTypo.displayBoldItalicLarge,
+    displayBoldItalicMedium: krTypo.displayBoldItalicMedium,
+    displayBoldItalicSmall: krTypo.displayBoldItalicSmall,
 
-    headingBoldExtraLarge: Typo.headingBoldExtraLarge,
-    headingBoldLarge: Typo.headingBoldLarge,
-    headingBoldMedium: Typo.headingBoldMedium,
-    headingBoldSmall: Typo.headingBoldSmall,
-    headingBoldExtraSmall: Typo.headingBoldExtraSmall,
-    subheadingSemiboldLarge: Typo.subheadingSemiboldLarge,
-    subheadingSemiboldDefault: Typo.subheadingSemiboldDefault,
+    headingBoldExtraLarge: krTypo.headingBoldExtraLarge,
+    headingBoldLarge: krTypo.headingBoldLarge,
+    headingBoldMedium: krTypo.headingBoldMedium,
+    headingBoldSmall: krTypo.headingBoldSmall,
+    headingBoldExtraSmall: krTypo.headingBoldExtraSmall,
+    subheadingSemiboldLarge: krTypo.subheadingSemiboldLarge,
+    subheadingSemiboldDefault: krTypo.subheadingSemiboldDefault,
 
-    headingBoldItalicExtraLarge: Typo.headingBoldItalicExtraLarge,
-    headingBoldItalicLarge: Typo.headingBoldItalicLarge,
-    headingBoldItalicMedium: Typo.headingBoldItalicMedium,
-    headingBoldItalicSmall: Typo.headingBoldItalicSmall,
-    headingBoldItalicExtraSmall: Typo.headingBoldItalicExtraSmall,
+    headingBoldItalicExtraLarge: krTypo.headingBoldItalicExtraLarge,
+    headingBoldItalicLarge: krTypo.headingBoldItalicLarge,
+    headingBoldItalicMedium: krTypo.headingBoldItalicMedium,
+    headingBoldItalicSmall: krTypo.headingBoldItalicSmall,
+    headingBoldItalicExtraSmall: krTypo.headingBoldItalicExtraSmall,
 
-    bodyRegularLarge: Typo.bodyRegularLarge,
-    bodyRegularMedium: Typo.bodyRegularMedium,
-    bodyRegularSmall: Typo.bodyRegularSmall,
+    bodyRegularLarge: krTypo.bodyRegularLarge,
+    bodyRegularMedium: krTypo.bodyRegularMedium,
+    bodyRegularSmall: krTypo.bodyRegularSmall,
 
-    bodyBoldLarge: Typo.bodyBoldLarge,
-    bodyBoldMedium: Typo.bodyBoldMedium,
-    bodyBoldSmall: Typo.bodyBoldSmall,
+    bodyBoldLarge: krTypo.bodyBoldLarge,
+    bodyBoldMedium: krTypo.bodyBoldMedium,
+    bodyBoldSmall: krTypo.bodyBoldSmall,
 
-    supportRegularInfo: Typo.supportRegularInfo,
-    supportRegularFootnote: Typo.supportRegularFootnote,
-    supportBoldTextButton: Typo.supportBoldTextButton,
-    supportRegularMetadata: Typo.supportRegularMetadata,
+    supportRegularInfo: krTypo.supportRegularInfo,
+    supportRegularFootnote: krTypo.supportRegularFootnote,
+    supportBoldTextButton: krTypo.supportBoldTextButton,
+    supportRegularMetadata: krTypo.supportRegularMetadata,
   }
 
-  return { Typo, typography }
+  return { krTypo, typography }
 }
 
 function getFontSizePixelNumber(fontSize: string): number {
@@ -380,8 +380,8 @@ function lineHeightCalculator(fontSize: string, lineHeightAdjustment: string) {
 }
 
 declare module '@mui/material/styles' {
-  interface TypographyVariants extends TypographyVariants {}
+  interface TypographyVariants extends KrTypographyVariants {}
 
   // allow configuration using `createTheme`
-  interface TypographyVariantsOptions extends TypographyVariants {}
+  interface TypographyVariantsOptions extends KrTypographyVariants {}
 }

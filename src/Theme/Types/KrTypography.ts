@@ -1,0 +1,33 @@
+export type KrTypographyTokens =
+  | 'displayBoldLarge'
+  | 'displayBoldMedium'
+  | 'displayBoldSmall'
+  | 'displayBoldItalicLarge'
+  | 'displayBoldItalicMedium'
+  | 'displayBoldItalicSmall'
+  | 'headingBoldExtraLarge'
+  | 'headingBoldLarge'
+  | 'headingBoldMedium'
+  | 'headingBoldSmall'
+  | 'headingBoldExtraSmall'
+  | 'subheadingSemiboldLarge'
+  | 'subheadingSemiboldDefault'
+  | 'headingBoldItalicExtraLarge'
+  | 'headingBoldItalicLarge'
+  | 'headingBoldItalicMedium'
+  | 'headingBoldItalicSmall'
+  | 'headingBoldItalicExtraSmall'
+  | 'bodyRegularLarge'
+  | 'bodyRegularMedium'
+  | 'bodyRegularSmall'
+  | 'bodyBoldLarge'
+  | 'bodyBoldMedium'
+  | 'bodyBoldSmall'
+  | 'supportRegularInfo'
+  | 'supportRegularFootnote'
+  | 'supportBoldTextButton'
+  | 'supportRegularMetadata'
+
+interface KrTypographyGenerics<T> extends Partial<Record<KrTypographyTokens, T>> {}
+
+export interface KrTypographyVariants extends KrTypographyGenerics<React.CSSProperties> {}

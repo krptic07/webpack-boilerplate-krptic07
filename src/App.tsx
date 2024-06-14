@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import getAppRouter from './Configurations/getAppRouter'
 import { RouterProvider } from 'react-router-dom'
+import { getTheme } from './Theme'
+import { FONT_FAMILY, PALETTE } from './Constants/THEME'
+import { Experimental_CssVarsProvider as CssVarsProvider, CssBaseline } from '@mui/material'
 
 type Props = {}
 
@@ -22,7 +25,16 @@ class App extends Component<Props, State> {
   }
 
   render() {
-    return <>{this.renderChildren()}</>
+    const AppTheme = getTheme(PALETTE, FONT_FAMILY)
+    return (
+      <CssVarsProvider
+        theme={AppTheme}
+        defaultMode="dark"
+        modeStorageKey="webpack-boilerplate-mode"
+      >
+        <CssBaseline enableColorScheme>{this.renderChildren()}</CssBaseline>
+      </CssVarsProvider>
+    )
   }
 }
 

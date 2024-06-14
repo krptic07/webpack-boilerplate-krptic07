@@ -1,0 +1,22 @@
+export type KrSpacingKeys =
+  | 'zero'
+  | 'deepFreeze'
+  | 'quickFreeze'
+  | 'glacial'
+  | 'frostbite'
+  | 'bitterCold'
+  | 'cool'
+  | 'mild'
+  | 'pleasant'
+  | 'warm'
+  | 'tepid'
+  | 'tropical'
+  | 'hot'
+  | 'blazing'
+  | 'molten'
+  | 'superheated'
+  | 'meltdown'
+  | 'whiteHot'
+  | 'plasma'
+
+export type KrSpacing = { [key in KrSpacingKeys]: number }
